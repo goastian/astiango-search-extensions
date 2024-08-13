@@ -1,0 +1,33 @@
+{
+  "name": "astiango-search-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "switch-firefox": "cp manifests/firefox.json src/manifest.json",
+    "switch-chrome": "cp manifests/chrome.json src/manifest.json",
+    "build": "web-ext build",
+    "sign": "web-ext sign --channel unlisted --timeout 360000",
+    "start-firefox": "web-ext run --pref extensions.experiments.enabled=true --pref security.sandbox.content.level=2",
+    "start-chrome": "web-ext run --target chromium",
+    "postinstall": "rm -rf src/libs/; mkdir -p src/libs; cp node_modules/webextension-polyfill/dist/browser-polyfill.js src/libs/browser-polyfill.js"
+  },
+  "webExt": {
+    "sourceDir": "./src/",
+    "run": {
+      "firefox": "firefoxdeveloperedition"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goastian/astiango-search-extensions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/goastian/astiango-search-extensions/issues"
+  },
+  "homepage": "https://github.com/goastian/astiango-search-extensions#readme",
+  "devDependencies": {
+    "web-ext": "^5.2.0",
+    "webextension-polyfill": "^0.8.0"
+  }
+}
