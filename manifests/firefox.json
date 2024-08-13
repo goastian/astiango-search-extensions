@@ -38,7 +38,7 @@
     "search_provider": {
       "name": "AstianGO Private Search",
       "search_url": "https://astiango.co/search/web={searchTerms}",
-      "favicon_url": "https://astiango.co/favicon.ico",
+      "favicon_url": "https://astiango.co/favicon.png",
       "keyword": "@astiango",
       "is_default": true,
       "suggest_url": "https://ac.duckduckgo.com/ac/",
