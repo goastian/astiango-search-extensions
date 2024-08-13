@@ -1,0 +1,49 @@
+{
+  "version": "1.1.0",
+  "background": {
+    "service_worker": "index.js",
+    "type": "module"
+  },
+  "action": {
+    "default_icon": {
+      "48": "./icons/icon48.png",
+      "128": "./icons/icon128.png"
+    },
+    "default_title": "AstianGO Private Search"
+  },
+  "manifest_version": 3,
+  "name": "AstianGO Private Search for Chrome",
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+  ],
+  "icons": {
+    "16": "./icons/icon16.png",
+    "48": "./icons/icon48.png",
+    "128": "./icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "./icons/icon16.png",
+        "./icons/icon48.png",
+        "./icons/icon128.png"
+      ],
+      "all_frames": true,
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "AstianGO Private Search",
+      "search_url": "https://astiango.co/search/web={searchTerms}",
+      "favicon_url": "https://astiango.co/favicon.ico",
+      "keyword": "@astiango",
+      "is_default": true,
+      "suggest_url": "https://ac.duckduckgo.com/ac/",
+      "suggest_url_get_params": "q={searchTerms}&type=list",
+      "encoding": "UTF-8"
+    }
+  }
+}
